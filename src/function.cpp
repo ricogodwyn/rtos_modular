@@ -1,7 +1,14 @@
 #include "header.h"
 DHT dht(DhtPin, DhtType);
 BH1750 lightMeter(0x23); // digunakan untuk mendefine bh1750
-SemaphoreHandle_t sem;
+
+void InitializeSensor()
+{
+    Wire.begin();
+    dht.begin();
+    lightMeter.begin(BH1750::CONTINUOUS_HIGH_RES_MODE);
+}
+
 void Temp(void *pvParameters)
 { // untuk menghitung temperatur dan menampilkan hasilnya
     while (1)
