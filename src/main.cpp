@@ -11,7 +11,9 @@ void setup()
   InitializeSensor();
   InitializeRTOS();
 }
-
+// String inputString = "";
 void loop()
 {
+  // writeBlocking();
+  // readBlocking();
 }

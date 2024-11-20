@@ -9,12 +9,12 @@
 #define DhtType DHT11 // digunakan untuk mendefine tipe sensor DHT11
 extern DHT dht;
 extern BH1750 lightMeter; // digunakan untuk mendefine bh1750
-
 extern SemaphoreHandle_t sem;
 void InitializeSensor();
 void InitializeRTOS();
 void Temp(void *pvParameters);
 void Hum(void *pvParameters);
-void Light(void *pvParameters);
-
+void readBlocking();
+void writeBlocking();
+// void Light(void *pvParameters);
 #endif
